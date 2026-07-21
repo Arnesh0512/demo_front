@@ -70,7 +70,7 @@ const packets = timeline.map((time, index) => ({
   intel: "Matches the normal baseline for the current 10-minute window.",
   mitre: "None",
   cve: "None",
-  cert: "Valid (NGOC-CA-ROOT)"
+  cert: "None"
 }));
 
 const logs = timeline.map((time, index) => ({
@@ -87,7 +87,7 @@ const logs = timeline.map((time, index) => ({
   intel: "The process behaviour is consistent with administrative baseline.",
   mitre: "None",
   cve: "None",
-  cert: "Verified System Binary"
+  cert: "None"
 }));
 
 const fileTemplates = [
@@ -123,7 +123,7 @@ const files = fileOffsets.map((offset, index) => {
     intel: "File activity is expected for the host role and maintenance window.",
     mitre: "None",
     cve: "None",
-    cert: "Trusted Package"
+    cert: "None"
   };
 });
 
@@ -347,7 +347,7 @@ function renderDetail(kind, rows, targetId) {
       <div class="intel-row"><span>Threat intel</span><b>${row.intel}</b></div>
       <div class="intel-row"><span>MITRE ATT&CK ID</span><b>${row.mitre}</b></div>
       <div class="intel-row"><span>CVE Context ID</span><b>${row.cve}</b></div>
-      <div class="intel-row"><span>Certificate ID</span><b>${row.cert}</b></div>
+      <div class="intel-row"><span>CERT-In Reference</span><b>${row.cert}</b></div>
     </aside>
   `;
 }

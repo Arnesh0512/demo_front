@@ -639,7 +639,7 @@ function bindEvents() {
     if (!text) return;
     addChat(text, true);
     $("#chatInput").value = "";
-    setTimeout(() => addChat(answer(text)), 250);
+    setTimeout(() => addChat(answer(text)), 5000);
   });
   addEventListener("hashchange", () => routeTo(location.hash.replace("#", "") || "home"));
 }

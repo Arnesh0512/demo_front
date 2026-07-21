@@ -7,8 +7,8 @@ from tkinter import ttk, messagebox
 import urllib.request
 import urllib.error
 
-from TRATA.block_window import BlockWindow
-from TRATA.password_window import PasswordWindow
+from block_window import BlockWindow
+from password_window import PasswordWindow
 
 # CONFIG.
 BASE_URL = "http://127.0.0.1:5000"
@@ -285,5 +285,5 @@ if __name__ == "__main__":
         app = PasswordWindow(api_key=api_key, agent_config=agent_config)
         app.mainloop()
 
-    app = create_main_window(on_success=on_success, blocking=True)  # swap it with settings window, jo khulegi on success.
+    app = create_main_window(on_success=on_success, blocking=False)  # swap it with settings window, jo khulegi on success.
     app.mainloop()

@@ -443,16 +443,17 @@ function renderAll() {
   renderTable("files", files, "fileBody", "fileHead", $("#fileSearch")?.value || "");
   renderProxy();
   renderProfile();
-  updateCountdown();
+  //updateCountdown();
 }
 
-function updateCountdown() {
+/*function updateCountdown() {
+  return;
   const remaining = Math.max(0, nextSuspiciousTime.getTime() - Date.now());
   const minutes = Math.floor(remaining / 60000);
   const seconds = Math.floor((remaining % 60000) / 1000);
   $("#nextWindow").textContent = `${pad(minutes)}:${pad(seconds)}`;
   if (remaining <= 0) triggerSuspicious();
-}
+}*/
 
 function bindEvents() {
   $$(".nav a, .brand, .profile-card").forEach((link) => {
@@ -987,7 +988,7 @@ function init() {
   addChat("Current one-hour window is normal. I will flag the next suspicious window when it arrives.");
   startHeroCanvas();
   startBehaviourGraph();
-  setInterval(updateCountdown, 1000);
+  //setInterval(updateCountdown, 1000);
   setTimeout(triggerSuspicious, Math.max(0, nextSuspiciousTime.getTime() - Date.now()));
   requestAnimationFrame(() => $("#loader").classList.add("hidden"));
 }
